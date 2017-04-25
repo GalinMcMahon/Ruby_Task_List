@@ -17,12 +17,19 @@ post("/tasks") do
   description = params.fetch("description")
   task = Task.new(description)
   task.save()
+  print task
+  @task_display = task
   erb(:success)
+end
+
+get('/detailspage') do
+  @details = Details.all()
+  erb(:detailspage)
 end
 
 post("/details") do
   details = params.fetch("details")
   deets = Details.new("details")
   deets.save()
-  erb(:success)
+  erb(:full_task)
 end
