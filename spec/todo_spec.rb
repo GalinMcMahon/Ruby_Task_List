@@ -35,3 +35,12 @@ describe(Task) do
     end
   end
 end
+
+describe(Details) do
+  describe("#details") do
+    it("lets you add details to a specific task") do
+      new_details = Details.new("go places")
+      expect(new_details.details()).to(eq("go places"))
+    end
+  end
+end

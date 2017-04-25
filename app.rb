@@ -19,3 +19,10 @@ post("/tasks") do
   task.save()
   erb(:success)
 end
+
+post("/details") do
+  details = params.fetch("details")
+  deets = Details.new("details")
+  deets.save()
+  erb(:success)
+end

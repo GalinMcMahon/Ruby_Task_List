@@ -21,3 +21,20 @@ class Task
     @@all_tasks = []
   end
 end
+
+class Details
+  @@all_details = []
+
+  define_method(:initialize) do |details|
+    @details = details
+  end
+
+  define_method(:details) do
+    @details
+  end
+
+  define_method(:save) do
+    @@all_details.push(self)
+  end
+
+end

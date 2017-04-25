@@ -14,6 +14,7 @@ Program keeps track of new tasks in a list
 |----------|-------|--------|
 | Accept a new task and return it | "do thing" | "do thing" |
 | Add new tasks to task list | "do stuff" | "do thing", "do stuff" |
+| Add functionality to include details | "details" | "details" |
 
 ## Setup/Installation Requirements
 
