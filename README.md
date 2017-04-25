@@ -18,11 +18,15 @@ Program keeps track of new tasks in a list
 
 ## Routes
 
-| Behavior | Route (URL) | Method | app.rb Example              | Process                            |
-|----------|-------------|--------|-----------------------------|------------------------------------|
-| Homepage | /           | GET    | get('/') do erb(:index) end | User requests the root route page. |
-|          |             |        |                             |                                    |
-|          |             |        |                             |                                    |
+| Behavior                 | Route (URL)     | Method | app.rb Example                                                    | Process                                                                       |
+|--------------------------|-----------------|--------|-------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| Homepage                 | /               | GET    | get('/') do -- erb(:index) -- end                                 | User requests the root route page.                                            |
+| Add details              | detailspage.erb | POST   | post("/details") do -- erb(:full_task) -- end                     | User inputs details for a chosen task                                         |
+| Display task and details | full_task.erb   | GET    | get('detailspage') do -- erb(:detailspage) -- or -- erb(:'/') end | Displays tasks and details, allows user to add more tasks or add more details |
+| Layout                   | layout.erb      | GET    | get('yield') -- erb(:'/') end                                     | Displays tasks                                                                |
+| Results                  | result.erb      | GET    | get('description') -- erb(:'/') end                               | Displays tasks                                                                |
+| Success                  | success.erb     | GET    |                                                                   | Redundant - Lets user know that a task has been submitted                     |
+
 ## Setup/Installation Requirements
 
 * Clone the folder from https://github.com/GalinMcMahon/Ruby_Task_List.git

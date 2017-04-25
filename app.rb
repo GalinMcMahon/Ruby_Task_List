@@ -8,14 +8,10 @@ get('/') do
   erb(:index)
 end
 
-# get('/result') do
-#   @description = params.fetch('input').to_s
-#   erb(:result)
-# end
-
-post("/tasks") do
+post('/tasks') do
   description = params.fetch("description")
-  task = Task.new(description)
+  details = params.fetch("details")
+  task = Task.new(description, details)
   task.save()
   print task
   @task_display = task
@@ -23,13 +19,23 @@ post("/tasks") do
 end
 
 get('/detailspage') do
-  @details = Details.all()
-  erb(:detailspage)
+  @details = Task.all()
+  erb(:success)
 end
 
-post("/details") do
+post('/details') do
+  description = params.fetch("description")
   details = params.fetch("details")
-  deets = Details.new("details")
+  deets = Task.new("details")
   deets.save()
+  erb(:full_task)
+end
+
+get("/full_task") do
+  erb(:/)
+end
+
+get('/todo/:id') do
+  @task = Task.find(params.fetch("id"))
   erb(:full_task)
 end

@@ -7,6 +7,20 @@ class Task
     @id = @@all_tasks.length().+(1)
   end
 
+  # attr_accessor :description, :details
+  # def initialize(args={})
+  #     options = {:description => self, :details => nil}.merge(args)
+  #     self.description = options[:description]
+  #     self.details = options[:details]
+  #   @description = description
+  #   @details = details
+  #   @id = @@all_tasks.length().+(1)
+  # end
+
+  # define_method(:initialize) do |details|
+  #   @details = details
+  # end
+
   define_method(:description) do # defines an instance method
     @description
   end
@@ -18,7 +32,7 @@ class Task
   define_method(:id) do
     @id
   end
-  
+
   define_singleton_method(:all) do # defines a class method
     @@all_tasks
   end
@@ -41,28 +55,3 @@ class Task
     found_task
   end
 end
-
-# class Details
-#   @@all_details = []
-#
-#   define_method(:initialize) do |details|
-#     @details = details
-#   end
-#
-#   define_method(:details) do
-#     @details
-#   end
-#
-#   define_singleton_method(:all) do # defines a class method
-#     @@all_details
-#   end
-#
-#   define_method(:save) do
-#     @@all_details.push(self)
-#   end
-#
-#   define_singleton_method(:clear) do
-#     @@all_details = []
-#   end
-#
-# end
