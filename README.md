@@ -16,6 +16,16 @@ Program keeps track of new tasks in a list
 | Add new tasks to task list | "do stuff" | "do thing", "do stuff" |
 | Add functionality to include details | "details" | "details" |
 
+## Routes
+
+| Behavior | Route (URL) | Method | app.rb Example | Process |
+|----------|-------------|--------|----------------|---------|
+|Homepage|/|GET|get('/') do
+               erb(:index)
+            end|User requests the root route page.|
+|          |             |        |                |         |
+|          |             |        |                |         |
+
 ## Setup/Installation Requirements
 
 * Clone the folder from https://github.com/GalinMcMahon/Ruby_Task_List.git
